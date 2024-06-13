@@ -11,7 +11,7 @@ getHttpCookies: function()
 
 getHttpCookie: function(nameArg)
 {
-	var name = Pointer_stringify(nameArg);
+	var name = UTF8ToString(nameArg);
 	var cookie = document.cookie;
 	var search = name + "=";
 	var setStr = "";
@@ -40,12 +40,12 @@ getHttpCookie: function(nameArg)
 
 setHttpCookie: function(nameArg, valueArg, expiresArg, pathArg, domainArg, secureArg)
 {
-	var name = Pointer_stringify(nameArg);
-	var value = Pointer_stringify(valueArg);
-	var expires = Pointer_stringify(expiresArg);
-	var path = Pointer_stringify(pathArg);
-	var domain = Pointer_stringify(domainArg);
-	var secure = Pointer_stringify(secureArg);
+	var name = UTF8ToString(nameArg);
+	var value = UTF8ToString(valueArg);
+	var expires = UTF8ToString(expiresArg);
+	var path = UTF8ToString(pathArg);
+	var domain = UTF8ToString(domainArg);
+	var secure = UTF8ToString(secureArg);
 	document.cookie = name + "=" + escape(value) +
 		((expires) ? "; expires=" + expires : "") +
 		((path) ? "; path=" + path : "") +
